@@ -3,6 +3,7 @@ import { existsSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { pool, initializeDatabase } from './db.js';
+import { seedDemoData } from './seed.js';
 
 const app = express();
 const port = Number(process.env.PORT || 4000);
@@ -298,6 +299,8 @@ app.use((error, _req, res, _next) => {
 
 async function start() {
   await initializeDatabase();
+  const seededDemoData = await seedDemoData(pool);
+  if (seededDemoData) console.log('Inventario de demostración cargado con datos ficticios.');
   app.listen(port, '0.0.0.0', () => console.log(`FerroStock API disponible en el puerto ${port}`));
 }
 

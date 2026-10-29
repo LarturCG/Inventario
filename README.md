@@ -28,7 +28,7 @@ El archivo [`render.yaml`](./render.yaml) configura la página, la API y una bas
 4. Render leerá `render.yaml` y mostrará los dos servicios que va a crear: la aplicación y la base de datos PostgreSQL. Revisa y confirma la creación con los planes **Free**.
 5. Espera a que ambos servicios terminen de desplegarse y abre la dirección `onrender.com` de la aplicación.
 
-Render configura la conexión a la base automáticamente y crea las tablas al iniciar la API. El despliegue empieza con un inventario vacío; no copia automáticamente los datos de tu computadora.
+Render configura la conexión a la base automáticamente y crea las tablas al iniciar la API. En el primer inicio, si la base de datos no tiene productos, la aplicación carga 10 productos de demostración con precios en COP, una compra a un proveedor ficticio y una venta a un cliente ficticio. La carga no sustituye datos existentes ni copia los datos de tu computadora.
 
 **Límites importantes del plan gratuito de Render:** la web se suspende tras 15 minutos sin visitas y puede tardar alrededor de un minuto en responder al volver a abrirla. La base PostgreSQL gratuita vence a los 30 días; después de su periodo de gracia, Render puede borrarla y perderás sus datos si no la actualizas. Comprueba los límites vigentes antes de desplegar.
 
